@@ -16,8 +16,7 @@ for plugin_dir in v3/plugins/*/*; do
   echo "Updating plugin ${plugin_dir}"
   # Make sure every plugin has a 'latest.version' file
   if [ ! -f "${plugin_dir}"/latest.txt ]; then
-    echo "    Missing latest.txt: ${plugin_dir}/latest.txt"
-    exit 1
+    continue
   fi
   # Generate meta.yaml for latest version
   version=$(cat "${plugin_dir}/latest.txt")
